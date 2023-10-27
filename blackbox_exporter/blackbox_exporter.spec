@@ -5,7 +5,7 @@ Summary:        A simple Prometheus exporter for Mikrotik RouterOS devices
 License:        MIT
 URL:            https://github.com/prometheus/%{name}
 
-Source0:        ${url}/%{name}/archive/refs/tags/v%{version}.tar.gz
+Source0:        https://github.com/prometheus/%{name}/archive/refs/tags/v%{version}.tar.gz
 Source1:        %{name}.service
 
 
@@ -36,7 +36,7 @@ exit 0
 
 %install
 # Binary
-install -Dpm 0755 %{name} %{buildroot}%{_bindir}/%{name}
+install -Dpm 0755 %{name}-%{version} %{buildroot}%{_bindir}/%{name}
 
 # Configuration
 install -Dpm 0644 blackbox.yml %{buildroot}%{_sysconfdir}/%{name}/config.yml
