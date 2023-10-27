@@ -1,0 +1,13 @@
+[Unit]
+Description=Mikrotik RouterOS Exporter
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=mikrotik-ros-exporter
+Group=mikrotik-ros-exporter
+Type=simple
+ExecStart=/usr/bin/mikrotik-ros-exporter -config=/etc/mikrotik-ros-exporter/config.yml
+
+[Install]
+WantedBy=multi-user.target
