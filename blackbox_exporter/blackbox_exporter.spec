@@ -1,8 +1,8 @@
 Name:           blackbox_exporter
 Version:        0.24.0
 Release:        1%{?dist}
-Summary:        A simple Prometheus exporter for Mikrotik RouterOS devices
-License:        MIT
+Summary:        Blackbox prober exporter
+License:        Apache-2.0
 URL:            https://github.com/prometheus/%{name}
 
 Source0:        https://github.com/prometheus/%{name}/archive/refs/tags/v%{version}.tar.gz
@@ -16,7 +16,7 @@ BuildRequires:  systemd-rpm-macros
 Provides:       %{name} = %{version}
 
 %description
-A simple Prometheus exporter for Mikrotik RouterOS devices
+Blackbox prober exporter
 
 %global debug_package %{nil}
 
