@@ -10,6 +10,7 @@ Source1:        config.yml
 Source2:        %{name}.service
 
 
+BuildRequires:  git
 BuildRequires:  golang
 BuildRequires:  systemd-rpm-macros
 
