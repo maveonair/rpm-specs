@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+  <group>
+    <target>JetBrainsMono Nerd Font</target>
+    <like>
+      <family>JetBrainsMono Nerd Font</family>
+      <family>monospace</family>
+    </like>
+  </group>
+</fontconfig>
