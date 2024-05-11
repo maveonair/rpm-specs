@@ -10,6 +10,7 @@ Source1:        Corefile
 Source2:        %{name}.service
 
 
+BuildRequires:  git
 BuildRequires:  golang
 BuildRequires:  systemd-rpm-macros
 
@@ -70,3 +71,4 @@ go test -v ./...
 %changelog
 * Sat May 11 2024 Fabian Mettler <dev@maveonair.com>
 - Initial package creation of version 1.11.1
+- Add missing BuildRequires for git
