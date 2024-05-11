@@ -1,6 +1,6 @@
 Name:           mikrotik-ros-exporter
 Version:        0.3.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        A simple Prometheus exporter for Mikrotik RouterOS devices
 License:        MIT
 URL:            https://github.com/eatplanted/%{name}
@@ -31,7 +31,7 @@ go build -v -o ./dist/%{name} cmd/%{name}/main.go
 getent passwd %{name} >/dev/null || \
   useradd \
       --system --user-group --shell /sbin/nologin \
-      --home-dir /var/lib/%{name} \
+      --create-home --home-dir /var/lib/%{name} \
       --comment "Mikrotik RouterOS Exporter" %{name}
 exit 0
 
@@ -69,5 +69,8 @@ go test -v ./...
 %{_unitdir}/%{name}.service
 
 %changelog
+* Sat May 11 2024 Fabian Mettler <dev@maveonair.com>
+- Fix home creation in pre script
+
 * Sat Oct 21 2023 Fabian Mettler <dev@maveonair.com>
 - Initial package creation of version 0.3.0

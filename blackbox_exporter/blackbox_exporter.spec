@@ -1,6 +1,6 @@
 Name:           blackbox_exporter
 Version:        0.25.0
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Blackbox prober exporter
 License:        Apache-2.0
 URL:            https://github.com/prometheus/%{name}
@@ -30,7 +30,7 @@ make build
 getent passwd %{name} >/dev/null || \
   useradd \
       --system --user-group --shell /sbin/nologin \
-      --home-dir /var/lib/%{name} \
+      --create-home --home-dir /var/lib/%{name} \
       --comment "Blackbox Exporter" %{name}
 exit 0
 
@@ -70,6 +70,7 @@ go test -v ./...
 %changelog
 * Sat May 11 2024 Fabian Mettler <dev@maveonair.com>
 - Bump to version 0.25.0
+- Fix home creation in pre script
 
 * Sat Oct 21 2023 Fabian Mettler <dev@maveonair.com>
 - Initial package creation of version 0.24.0
