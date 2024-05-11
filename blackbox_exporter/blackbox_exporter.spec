@@ -68,5 +68,8 @@ go test -v ./...
 %{_unitdir}/%{name}.service
 
 %changelog
+* Sat May 11 2024 Fabian Mettler <dev@maveonair.com>
+- Bump to version 0.25.0
+
 * Sat Oct 21 2023 Fabian Mettler <dev@maveonair.com>
 - Initial package creation of version 0.24.0
